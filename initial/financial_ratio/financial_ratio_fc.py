@@ -93,6 +93,16 @@ class financial_ratio(ETL):
             
 #*------------------------------------------------load data---------------------------------------------------------------------       
     def load_data(self):
-        print(self.data) 
+        try:   
+      
+            container_name = 'scgpdldev/EDW_DATA_LANDING/scgp_fi_acct'
+            container_client = self.blob_service_client.get_container_client(container= container_name)
+            # Upload the file to Azure Blob Storage
+            blob_client = container_client.get_blob_client(self.file_name) 
+            with open(f'./output_data/bs/{self.file_name}', "rb" ) as data:
+                blob_client.upload_blob(data, overwrite=True)
+ 
+        except Exception as e:
+                print(e)
         
  

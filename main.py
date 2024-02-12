@@ -43,8 +43,8 @@ if __name__ == '__main__':
     
     print('============== HELLO START PROGRAM!! =================')
     #*----------------------------------------- program_statement ------------------------------------------------------
-    lst_sheet = ['PP']
-    file = './file/Program_Statement/1. 01_PS_WY22.xlsb'
+    # lst_sheet = ['PP']
+    # file = './file/Program_Statement/1. 01_PS_WY22.xlsb'
     
     # lst_sheet = ['PP_TH',  'SKIC_KF', 'SKIC_PB', 'SKIC_DPP', 'SKIC_PBL',  'Fajar_CB', 'Fajar_Conso', 'Fajar_DPP', 'Fajar_Com', 'DAP_Com']
     # file = './file/Program_Statement/14. C01_PS_PP.xlsx'
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # lst_sheet = ['Vexcel']
     # file = './file/Program_Statement/15. E01_PS_PPP_Plant.xlsx' 
     
-    system = 'program_statement'   
+    # system = 'program_statement'   
     
     #*----------------------------------------- Financial_Ratio ------------------------------------------------------
     # lst_sheet = ['FC(ROIC)_FC_Business']
@@ -67,8 +67,8 @@ if __name__ == '__main__':
     # file = './file/Financial_Ratio/9. C09_Financial Ratio_PP.xlsx'  
     
     # lst_sheet = ['CPP(ROIC)'] 
-    # lst_sheet = ['CPP (BS Act)']
-    # file = './file/Financial_Ratio/10. E09_Financial Ratio_PPP.xlsx'  
+    lst_sheet = ['CPP (BS Act)']
+    file = './file/Financial_Ratio/10. E09_Financial Ratio_PPP.xlsx'  
     
     # lst_sheet = ['CIP(ROIC)']
     # lst_sheet = ['BPC BS V']
@@ -83,7 +83,7 @@ if __name__ == '__main__':
     # lst_sheet = ['Conso(ROIC)']
     # file = './file/Financial_Ratio/13. Financial Ratio.xlsx'   
  
-    # system = 'financial_ratio'   
+    system = 'financial_ratio'   
     
     #*----------------------------------------- exchange_rate ------------------------------------------------------
     # lst_sheet = [ '2022']
