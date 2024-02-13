@@ -17,8 +17,7 @@ class financial_ratio(ETL):
         try:   
             lst_expexted_columns = ['gl_account_number', 'gl_account_name',
                                     'gl_month', 'gl_year',
-                                    'gl_amount', 'gl_src', 'scd_active',
-                                    'scd_start', 'scd_end'
+                                    'gl_amount', 'gl_src'
                                     ] 
             
             ans_df = pd.DataFrame(columns=lst_expexted_columns) 
@@ -51,9 +50,9 @@ class financial_ratio(ETL):
                             'gl_year': year_month.strftime('%Y'),
                             'gl_amount': gl_amount,
                             'gl_src': gl_src,
-                            'scd_active': scd_active, 
-                            'scd_start': year_month.strftime('%Y-%m-%d'),
-                            'scd_end': scd_end 
+                            # 'scd_active': scd_active, 
+                            # 'scd_start': year_month.strftime('%Y-%m-%d'),
+                            # 'scd_end': scd_end 
                             }
                     
                     new_row = pd.DataFrame(data, index=[0])

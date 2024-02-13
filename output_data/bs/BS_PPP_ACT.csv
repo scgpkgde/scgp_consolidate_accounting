@@ -1,0 +1,391 @@
+bs_month,bs_year,bs_account_name,bs_amount,bs_src
+12,2021,Cash on Hand and in Banks,812568.2290915126,PPP
+12,2021,Accounts and Notes Receivable - Trade,3144643.457087834,PPP
+12,2021,Receivable from Subsidiaries - Trade,25340.036191963998,PPP
+12,2021,Receivable from Subsidiaries - Current Account,-78.18418782849994,PPP
+12,2021,Promissory Notes Receivable to Subsidiaries,1620413.1103615523,PPP
+12,2021,Contract Assets,0.0,PPP
+12,2021,Inventories - Finished Goods,1237406.9959624014,PPP
+12,2021,Goods in Process,246805.73021286726,PPP
+12,2021,Raw Materials,1569780.9100577077,PPP
+12,2021,Spare Parts,136253.0388552767,PPP
+12,2021,"Stores, Supplies and Others",101582.04682305882,PPP
+12,2021,Goods in Transit,128979.257297396,PPP
+12,2021,Other Current Assets,238249.8999465489,PPP
+12,2021,Investments - At Cost,19573868.38662529,PPP
+12,2021,"Property, Plant And Equipment - At Cost",0.0,PPP
+12,2021,Land and Land Improvements,677666.7079236666,PPP
+12,2021,Buildings and Structures,2802132.3668185654,PPP
+12,2021,Plant Machinery and Equipment,10193971.833418597,PPP
+12,2021,Transportation and Miscellaneous Equipment,354451.8650061595,PPP
+12,2021,Office Furniture and Equipment,151771.2901663965,PPP
+12,2021,Construction in Progress,804899.8211293981,PPP
+12,2021,Sundry Assets,14787.294886916501,PPP
+12,2021,Accumulated Depreciation,-7633916.787360247,PPP
+12,2021,Right of Use Assets,-3977.3468700000003,PPP
+12,2021,Other Assets,0.0,PPP
+12,2021,Investment Property,6830.280839999999,PPP
+12,2021,Goodwill - Dyna & Orient,16200.996195,PPP
+12,2021,Deferred Income Tax,56866.58659437415,PPP
+12,2021,Deferred Charges & Others,-62292.10869449488,PPP
+12,2021,Manpower,1571.0,PPP
+01,2022,Cash on Hand and in Banks,870764.7503891392,PPP
+01,2022,Accounts and Notes Receivable - Trade,3093048.321671605,PPP
+01,2022,Receivable from Subsidiaries - Trade,20041.97664442312,PPP
+01,2022,Receivable from Subsidiaries - Current Account,6905.475352976517,PPP
+01,2022,Promissory Notes Receivable to Subsidiaries,2642147.5564900003,PPP
+01,2022,Contract Assets,0.0,PPP
+01,2022,Inventories - Finished Goods,1310755.4422325809,PPP
+01,2022,Goods in Process,236017.638762592,PPP
+01,2022,Raw Materials,1489541.6304263002,PPP
+01,2022,Spare Parts,135305.347282244,PPP
+01,2022,"Stores, Supplies and Others",104851.74127140403,PPP
+01,2022,Goods in Transit,63332.308209664,PPP
+01,2022,Other Current Assets,289774.42109820654,PPP
+01,2022,Investments - At Cost,13056005.787941353,PPP
+01,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+01,2022,Land and Land Improvements,680784.5838328521,PPP
+01,2022,Buildings and Structures,2718060.6340695005,PPP
+01,2022,Plant Machinery and Equipment,10402622.574835332,PPP
+01,2022,Transportation and Miscellaneous Equipment,348391.72624578804,PPP
+01,2022,Office Furniture and Equipment,120592.417107428,PPP
+01,2022,Construction in Progress,883845.059413592,PPP
+01,2022,Sundry Assets,14903.412258852002,PPP
+01,2022,Accumulated Depreciation,-7747122.166538408,PPP
+01,2022,Right of Use Assets,-3977.3468700000003,PPP
+01,2022,Other Assets,0.0,PPP
+01,2022,Investment Property,6830.280839999999,PPP
+01,2022,Goodwill - Dyna & Orient,16969.390139999992,PPP
+01,2022,Deferred Income Tax,101465.31333303844,PPP
+01,2022,Deferred Charges & Others,138032.583376948,PPP
+01,2022,Manpower,1706.0,PPP
+02,2022,Cash on Hand and in Banks,1068745.9159092251,PPP
+02,2022,Accounts and Notes Receivable - Trade,2993721.76935309,PPP
+02,2022,Receivable from Subsidiaries - Trade,28436.292391576004,PPP
+02,2022,Receivable from Subsidiaries - Current Account,-7096.083900000001,PPP
+02,2022,Promissory Notes Receivable to Subsidiaries,2511289.47999,PPP
+02,2022,Contract Assets,0.0,PPP
+02,2022,Inventories - Finished Goods,1275528.2709523772,PPP
+02,2022,Goods in Process,246624.58011729753,PPP
+02,2022,Raw Materials,1411514.491518605,PPP
+02,2022,Spare Parts,134257.048060335,PPP
+02,2022,"Stores, Supplies and Others",102543.922962849,PPP
+02,2022,Goods in Transit,108759.055548242,PPP
+02,2022,Other Current Assets,219708.97682831273,PPP
+02,2022,Investments - At Cost,12886918.802857177,PPP
+02,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+02,2022,Land and Land Improvements,669261.9989510796,PPP
+02,2022,Buildings and Structures,2674680.513092313,PPP
+02,2022,Plant Machinery and Equipment,10308492.128477119,PPP
+02,2022,Transportation and Miscellaneous Equipment,338036.7816597755,PPP
+02,2022,Office Furniture and Equipment,120059.91196292551,PPP
+02,2022,Construction in Progress,837309.5928502055,PPP
+02,2022,Sundry Assets,14578.673177829502,PPP
+02,2022,Accumulated Depreciation,-7716642.509682905,PPP
+02,2022,Right of Use Assets,-3977.3468700000003,PPP
+02,2022,Other Assets,0.0,PPP
+02,2022,Investment Property,6830.280839999999,PPP
+02,2022,Goodwill - Dyna & Orient,16540.618535,PPP
+02,2022,Deferred Income Tax,106945.52148549764,PPP
+02,2022,Deferred Charges & Others,133586.4393668065,PPP
+02,2022,Manpower,1683.0,PPP
+03,2022,Cash on Hand and in Banks,1423035.2947569476,PPP
+03,2022,Accounts and Notes Receivable - Trade,3061024.598766219,PPP
+03,2022,Receivable from Subsidiaries - Trade,23631.122143260003,PPP
+03,2022,Receivable from Subsidiaries - Current Account,7687.253290000001,PPP
+03,2022,Promissory Notes Receivable to Subsidiaries,2498739.01187,PPP
+03,2022,Contract Assets,0.0,PPP
+03,2022,Inventories - Finished Goods,1391091.8931662813,PPP
+03,2022,Goods in Process,237209.65076903102,PPP
+03,2022,Raw Materials,1450285.3787864482,PPP
+03,2022,Spare Parts,137421.764230158,PPP
+03,2022,"Stores, Supplies and Others",100840.66384613299,PPP
+03,2022,Goods in Transit,73544.660534588,PPP
+03,2022,Other Current Assets,220861.12339193045,PPP
+03,2022,Investments - At Cost,13013280.814637681,PPP
+03,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+03,2022,Land and Land Improvements,675633.310591589,PPP
+03,2022,Buildings and Structures,2713216.420596481,PPP
+03,2022,Plant Machinery and Equipment,10428629.563790273,PPP
+03,2022,Transportation and Miscellaneous Equipment,345035.072176821,PPP
+03,2022,Office Furniture and Equipment,121574.089096121,PPP
+03,2022,Construction in Progress,864160.2895178101,PPP
+03,2022,Sundry Assets,0.0,PPP
+03,2022,Accumulated Depreciation,-7882282.871446356,PPP
+03,2022,Right of Use Assets,-3977.3468700000003,PPP
+03,2022,Other Assets,0.0,PPP
+03,2022,Investment Property,6830.280839999999,PPP
+03,2022,Goodwill - Dyna & Orient,17638.57086,PPP
+03,2022,Deferred Income Tax,100633.05599534842,PPP
+03,2022,Deferred Charges & Others,133739.878071215,PPP
+03,2022,Manpower,1671.0,PPP
+04,2022,Cash on Hand and in Banks,1490897.0649521064,PPP
+04,2022,Accounts and Notes Receivable - Trade,3109916.296982567,PPP
+04,2022,Receivable from Subsidiaries - Trade,21984.00765696662,PPP
+04,2022,Receivable from Subsidiaries - Current Account,28711.515512614063,PPP
+04,2022,Promissory Notes Receivable to Subsidiaries,2544461.9787500002,PPP
+04,2022,Contract Assets,0.0,PPP
+04,2022,Inventories - Finished Goods,1420843.5323784128,PPP
+04,2022,Goods in Process,248655.09435250398,PPP
+04,2022,Raw Materials,1508268.8380292477,PPP
+04,2022,Spare Parts,137724.300048624,PPP
+04,2022,"Stores, Supplies and Others",106964.812465384,PPP
+04,2022,Goods in Transit,48339.468213072,PPP
+04,2022,Other Current Assets,245485.31749192515,PPP
+04,2022,Investments - At Cost,13254119.765403809,PPP
+04,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+04,2022,Land and Land Improvements,686206.976718392,PPP
+04,2022,Buildings and Structures,2754273.155149752,PPP
+04,2022,Plant Machinery and Equipment,10534662.388509898,PPP
+04,2022,Transportation and Miscellaneous Equipment,352994.36193808797,PPP
+04,2022,Office Furniture and Equipment,122972.937858488,PPP
+04,2022,Construction in Progress,919043.1734648721,PPP
+04,2022,Sundry Assets,0.0,PPP
+04,2022,Accumulated Depreciation,-8059309.5563757345,PPP
+04,2022,Right of Use Assets,-3977.3468700000003,PPP
+04,2022,Other Assets,0.0,PPP
+04,2022,Investment Property,6830.280839999999,PPP
+04,2022,Goodwill - Dyna & Orient,17894.824679999998,PPP
+04,2022,Deferred Income Tax,106045.65710957586,PPP
+04,2022,Deferred Charges & Others,154885.877124128,PPP
+04,2022,Manpower,1662.0,PPP
+05,2022,Cash on Hand and in Banks,1182403.3861775654,PPP
+05,2022,Accounts and Notes Receivable - Trade,3297948.592501914,PPP
+05,2022,Receivable from Subsidiaries - Trade,26953.561792747198,PPP
+05,2022,Receivable from Subsidiaries - Current Account,10394.998289999992,PPP
+05,2022,Promissory Notes Receivable to Subsidiaries,2595487.06329,PPP
+05,2022,Contract Assets,0.0,PPP
+05,2022,Inventories - Finished Goods,1402300.0019349814,PPP
+05,2022,Goods in Process,240376.41939217548,PPP
+05,2022,Raw Materials,1394005.6575670429,PPP
+05,2022,Spare Parts,137054.3411627635,PPP
+05,2022,"Stores, Supplies and Others",104405.5985164865,PPP
+05,2022,Goods in Transit,143454.4481421155,PPP
+05,2022,Other Current Assets,272712.6878997323,PPP
+05,2022,Investments - At Cost,13215806.62006537,PPP
+05,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+05,2022,Land and Land Improvements,680377.9043664364,PPP
+05,2022,Buildings and Structures,2734958.284196981,PPP
+05,2022,Plant Machinery and Equipment,10481280.078591404,PPP
+05,2022,Transportation and Miscellaneous Equipment,348953.0980517485,PPP
+05,2022,Office Furniture and Equipment,122844.9270567985,PPP
+05,2022,Construction in Progress,941205.3223889185,PPP
+05,2022,Sundry Assets,0.0,PPP
+05,2022,Accumulated Depreciation,-8108351.655607341,PPP
+05,2022,Right of Use Assets,-3977.3468700000003,PPP
+05,2022,Other Assets,0.0,PPP
+05,2022,Investment Property,6830.280839999999,PPP
+05,2022,Goodwill - Dyna & Orient,17559.622065,PPP
+05,2022,Deferred Income Tax,102031.12592568512,PPP
+05,2022,Deferred Charges & Others,132328.9858773255,PPP
+05,2022,Manpower,1652.0,PPP
+06,2022,Cash on Hand and in Banks,4566213.929717855,PPP
+06,2022,Accounts and Notes Receivable - Trade,3595709.744816945,PPP
+06,2022,Receivable from Subsidiaries - Trade,33979.15400860318,PPP
+06,2022,Receivable from Subsidiaries - Current Account,412.27393999999913,PPP
+06,2022,Promissory Notes Receivable to Subsidiaries,2696053.39563,PPP
+06,2022,Contract Assets,0.0,PPP
+06,2022,Inventories - Finished Goods,1353457.9058575137,PPP
+06,2022,Goods in Process,239622.7166536374,PPP
+06,2022,Raw Materials,1465535.982526552,PPP
+06,2022,Spare Parts,141578.81326656998,PPP
+06,2022,"Stores, Supplies and Others",111021.81189205,PPP
+06,2022,Goods in Transit,126687.95357560499,PPP
+06,2022,Other Current Assets,268055.286528348,PPP
+06,2022,Investments - At Cost,13687281.226138018,PPP
+06,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+06,2022,Land and Land Improvements,691900.4892482089,PPP
+06,2022,Buildings and Structures,2779344.1593361786,PPP
+06,2022,Plant Machinery and Equipment,10640775.04896508,PPP
+06,2022,Transportation and Miscellaneous Equipment,351316.97746800096,PPP
+06,2022,Office Furniture and Equipment,125895.978070662,PPP
+06,2022,Construction in Progress,994359.256701553,PPP
+06,2022,Sundry Assets,0.0,PPP
+06,2022,Accumulated Depreciation,-8312914.257920891,PPP
+06,2022,Right of Use Assets,-3977.3468700000003,PPP
+06,2022,Other Assets,0.0,PPP
+06,2022,Investment Property,6830.280839999999,PPP
+06,2022,Goodwill - Dyna & Orient,17674.86344999999,PPP
+06,2022,Deferred Income Tax,103986.01162154255,PPP
+06,2022,Deferred Charges & Others,133604.454330877,PPP
+06,2022,Manpower,1679.0,PPP
+07,2022,Cash on Hand and in Banks,1032377.780723024,PPP
+07,2022,Accounts and Notes Receivable - Trade,3731747.9288019557,PPP
+07,2022,Receivable from Subsidiaries - Trade,36111.11518073268,PPP
+07,2022,Receivable from Subsidiaries - Current Account,316.66038000000117,PPP
+07,2022,Promissory Notes Receivable to Subsidiaries,2676247.13299,PPP
+07,2022,Contract Assets,0.0,PPP
+07,2022,Inventories - Finished Goods,1357019.5477099072,PPP
+07,2022,Goods in Process,249135.84710077537,PPP
+07,2022,Raw Materials,1575363.7622588251,PPP
+07,2022,Spare Parts,138092.508849725,PPP
+07,2022,"Stores, Supplies and Others",117150.6138541,PPP
+07,2022,Goods in Transit,111123.386762,PPP
+07,2022,Other Current Assets,252721.44051863585,PPP
+07,2022,Investments - At Cost,14059232.161533661,PPP
+07,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+07,2022,Land and Land Improvements,707625.4286162751,PPP
+07,2022,Buildings and Structures,2961620.099692025,PPP
+07,2022,Plant Machinery and Equipment,10882729.054691788,PPP
+07,2022,Transportation and Miscellaneous Equipment,363059.185293475,PPP
+07,2022,Office Furniture and Equipment,130032.51407795,PPP
+07,2022,Construction in Progress,897464.0746460501,PPP
+07,2022,Sundry Assets,0.0,PPP
+07,2022,Accumulated Depreciation,-8578079.704316758,PPP
+07,2022,Right of Use Assets,-3977.3468700000003,PPP
+07,2022,Other Assets,0.0,PPP
+07,2022,Investment Property,6830.280839999999,PPP
+07,2022,Goodwill - Dyna & Orient,18203.66317,PPP
+07,2022,Deferred Income Tax,99603.8103967208,PPP
+07,2022,Deferred Charges & Others,135924.29793514998,PPP
+07,2022,Manpower,1671.0,PPP
+08,2022,Cash on Hand and in Banks,878008.2295441317,PPP
+08,2022,Accounts and Notes Receivable - Trade,3315784.371064167,PPP
+08,2022,Receivable from Subsidiaries - Trade,32725.483984709666,PPP
+08,2022,Receivable from Subsidiaries - Current Account,168160.917062883,PPP
+08,2022,Promissory Notes Receivable to Subsidiaries,2534287.19268,PPP
+08,2022,Contract Assets,0.0,PPP
+08,2022,Inventories - Finished Goods,1343716.493260569,PPP
+08,2022,Goods in Process,239802.90496945017,PPP
+08,2022,Raw Materials,1678817.1867745752,PPP
+08,2022,Spare Parts,138302.23293362,PPP
+08,2022,"Stores, Supplies and Others",120739.461460845,PPP
+08,2022,Goods in Transit,195698.52487932754,PPP
+08,2022,Other Current Assets,248747.0605197017,PPP
+08,2022,Investments - At Cost,13968023.893615372,PPP
+08,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+08,2022,Land and Land Improvements,702880.8348414275,PPP
+08,2022,Buildings and Structures,2949397.5935200024,PPP
+08,2022,Plant Machinery and Equipment,10847539.324374828,PPP
+08,2022,Transportation and Miscellaneous Equipment,357450.8499144225,PPP
+08,2022,Office Furniture and Equipment,129712.377108195,PPP
+08,2022,Construction in Progress,898965.7952338974,PPP
+08,2022,Sundry Assets,0.0,PPP
+08,2022,Accumulated Depreciation,-8612369.186536975,PPP
+08,2022,Right of Use Assets,-3977.3468700000003,PPP
+08,2022,Other Assets,0.0,PPP
+08,2022,Investment Property,6830.280839999999,PPP
+08,2022,Goodwill - Dyna & Orient,17892.737175000002,PPP
+08,2022,Deferred Income Tax,103346.34513366301,PPP
+08,2022,Deferred Charges & Others,132986.279164575,PPP
+08,2022,Manpower,1674.0,PPP
+09,2022,Cash on Hand and in Banks,744185.5177725034,PPP
+09,2022,Accounts and Notes Receivable - Trade,3174865.952592018,PPP
+09,2022,Receivable from Subsidiaries - Trade,24597.350183912677,PPP
+09,2022,Receivable from Subsidiaries - Current Account,-402.9280199999994,PPP
+09,2022,Promissory Notes Receivable to Subsidiaries,2543036.25803,PPP
+09,2022,Contract Assets,0.0,PPP
+09,2022,Inventories - Finished Goods,1423448.0666878766,PPP
+09,2022,Goods in Process,258972.0444660306,PPP
+09,2022,Raw Materials,1666225.225315762,PPP
+09,2022,Spare Parts,137389.9153231365,PPP
+09,2022,"Stores, Supplies and Others",127379.22141348601,PPP
+09,2022,Goods in Transit,324797.1527812705,PPP
+09,2022,Other Current Assets,256502.48654784114,PPP
+09,2022,Investments - At Cost,14321018.43793571,PPP
+09,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+09,2022,Land and Land Improvements,711827.7831025685,PPP
+09,2022,Buildings and Structures,2983959.9200986736,PPP
+09,2022,Plant Machinery and Equipment,11013302.64608059,PPP
+09,2022,Transportation and Miscellaneous Equipment,360978.09325103246,PPP
+09,2022,Office Furniture and Equipment,130923.11134573298,PPP
+09,2022,Construction in Progress,904315.3546457024,PPP
+09,2022,Sundry Assets,0.0,PPP
+09,2022,Accumulated Depreciation,-8806467.129557686,PPP
+09,2022,Right of Use Assets,-3977.3468700000003,PPP
+09,2022,Other Assets,0.0,PPP
+09,2022,Investment Property,6830.280839999999,PPP
+09,2022,Goodwill - Dyna & Orient,17938.700754999998,PPP
+09,2022,Deferred Income Tax,99968.95759541556,PPP
+09,2022,Deferred Charges & Others,133538.830958721,PPP
+09,2022,Manpower,1675.0,PPP
+10,2022,Cash on Hand and in Banks,729248.8365672634,PPP
+10,2022,Accounts and Notes Receivable - Trade,3309560.638724139,PPP
+10,2022,Receivable from Subsidiaries - Trade,16782.762904880277,PPP
+10,2022,Receivable from Subsidiaries - Current Account,-1015.9363023940023,PPP
+10,2022,Promissory Notes Receivable to Subsidiaries,2467268.04866,PPP
+10,2022,Contract Assets,0.0,PPP
+10,2022,Inventories - Finished Goods,1436026.2939629543,PPP
+10,2022,Goods in Process,259316.70325348637,PPP
+10,2022,Raw Materials,1584249.0689528682,PPP
+10,2022,Spare Parts,137752.9188730405,PPP
+10,2022,"Stores, Supplies and Others",120261.75677671701,PPP
+10,2022,Goods in Transit,303142.33059445303,PPP
+10,2022,Other Current Assets,262413.67497005605,PPP
+10,2022,Investments - At Cost,14349910.675081007,PPP
+10,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+10,2022,Land and Land Improvements,695831.7240902255,PPP
+10,2022,Buildings and Structures,2923295.1274143346,PPP
+10,2022,Plant Machinery and Equipment,10869051.846858263,PPP
+10,2022,Transportation and Miscellaneous Equipment,349118.7238304975,PPP
+10,2022,Office Furniture and Equipment,129277.502653059,PPP
+10,2022,Construction in Progress,854416.1990011266,PPP
+10,2022,Sundry Assets,14942.097,PPP
+10,2022,Accumulated Depreciation,-8747374.991468523,PPP
+10,2022,Right of Use Assets,-3977.3468700000003,PPP
+10,2022,Other Assets,0.0,PPP
+10,2022,Investment Property,6830.280839999999,PPP
+10,2022,Goodwill - Dyna & Orient,17252.613615000002,PPP
+10,2022,Deferred Income Tax,100871.15716245584,PPP
+10,2022,Deferred Charges & Others,123480.4969573825,PPP
+10,2022,Manpower,6313.0,PPP
+11,2022,Cash on Hand and in Banks,683972.467725574,PPP
+11,2022,Accounts and Notes Receivable - Trade,3099478.9838077445,PPP
+11,2022,Receivable from Subsidiaries - Trade,22552.373346941684,PPP
+11,2022,Receivable from Subsidiaries - Current Account,-897.3214739730029,PPP
+11,2022,Promissory Notes Receivable to Subsidiaries,2542879.13868,PPP
+11,2022,Contract Assets,0.0,PPP
+11,2022,Inventories - Finished Goods,1333956.9452802867,PPP
+11,2022,Goods in Process,242564.59731714916,PPP
+11,2022,Raw Materials,1544678.3419941016,PPP
+11,2022,Spare Parts,134241.024954481,PPP
+11,2022,"Stores, Supplies and Others",115647.41300231002,PPP
+11,2022,Goods in Transit,120383.321696294,PPP
+11,2022,Other Current Assets,250712.38994122442,PPP
+11,2022,Investments - At Cost,13682440.62503273,PPP
+11,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+11,2022,Land and Land Improvements,667906.4007296945,PPP
+11,2022,Buildings and Structures,2824077.858917324,PPP
+11,2022,Plant Machinery and Equipment,10593195.736135244,PPP
+11,2022,Transportation and Miscellaneous Equipment,333815.416183335,PPP
+11,2022,Office Furniture and Equipment,126506.023701093,PPP
+11,2022,Construction in Progress,736522.468310897,PPP
+11,2022,Sundry Assets,14942.097,PPP
+11,2022,Accumulated Depreciation,-8511768.338384422,PPP
+11,2022,Right of Use Assets,-3977.3468700000003,PPP
+11,2022,Other Assets,0.0,PPP
+11,2022,Investment Property,6830.280839999999,PPP
+11,2022,Goodwill - Dyna & Orient,16340.604285000001,PPP
+11,2022,Deferred Income Tax,107011.32042813851,PPP
+11,2022,Deferred Charges & Others,122589.92019231251,PPP
+11,2022,Manpower,6272.0,PPP
+12,2022,Cash on Hand and in Banks,806724.1695858885,PPP
+12,2022,Accounts and Notes Receivable - Trade,2828567.2084125243,PPP
+12,2022,Receivable from Subsidiaries - Trade,36906.26627769899,PPP
+12,2022,Receivable from Subsidiaries - Current Account,-582.9652678284997,PPP
+12,2022,Promissory Notes Receivable to Subsidiaries,2851596.9985599997,PPP
+12,2022,Contract Assets,0.0,PPP
+12,2022,Inventories - Finished Goods,1346034.8595306901,PPP
+12,2022,Goods in Process,269163.0863748875,PPP
+12,2022,Raw Materials,1545835.8472001376,PPP
+12,2022,Spare Parts,135470.448749475,PPP
+12,2022,"Stores, Supplies and Others",118250.52099201799,PPP
+12,2022,Goods in Transit,121747.35131961248,PPP
+12,2022,Other Current Assets,243464.58698180495,PPP
+12,2022,Investments - At Cost,13494091.456967002,PPP
+12,2022,"Property, Plant And Equipment - At Cost",0.0,PPP
+12,2022,Land and Land Improvements,742146.3632793895,PPP
+12,2022,Buildings and Structures,2982051.04528837,PPP
+12,2022,Plant Machinery and Equipment,11029262.272569375,PPP
+12,2022,Transportation and Miscellaneous Equipment,339912.70953448047,PPP
+12,2022,Office Furniture and Equipment,121007.163902023,PPP
+12,2022,Construction in Progress,557721.8942626739,PPP
+12,2022,Sundry Assets,10733.5905648015,PPP
+12,2022,Accumulated Depreciation,-8688938.130446272,PPP
+12,2022,Right of Use Assets,-3977.3468700000003,PPP
+12,2022,Other Assets,0.0,PPP
+12,2022,Investment Property,6830.280839999999,PPP
+12,2022,Goodwill - Dyna & Orient,18632.200315000002,PPP
+12,2022,Deferred Income Tax,107399.72246889469,PPP
+12,2022,Deferred Charges & Others,149097.10232867702,PPP
+12,2022,Manpower,6250.0,PPP

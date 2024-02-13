@@ -1,0 +1,349 @@
+bs_month,bs_year,bs_account_name,bs_amount,bs_src
+01,2022,Cash on hand and in banks,681577.1235882699,FC
+01,2022,Accounts receivable - trade,3012159.033134722,FC
+01,2022,Accounts receivable - trade from affiliated company,237587.64238,FC
+01,2022,Contract Assets,33.599239999999995,FC
+01,2022,Current account receivable from affiliated company,0.0,FC
+01,2022,Promissory note and loans to affiliated company,0.0,FC
+01,2022,Promissory note and maketable securities,0.0,FC
+01,2022,Finished Goods,1564931.872658418,FC
+01,2022,Works in process,455257.10436054395,FC
+01,2022,Raw materials,697614.59855967,FC
+01,2022,Spare parts,550260.2399100001,FC
+01,2022,"Stores, Supplies and others",271652.00459,FC
+01,2022,Goods in transit,298729.22798820003,FC
+01,2022,Assets classified as held for sale & Other Current Assets,303554.3059789641,FC
+01,2022,Investments - At Cost,418021.1415531385,FC
+01,2022,Long Term Loan to Affiliate Co.,0.0,FC
+01,2022,Land and land improvements,1295067.09253,FC
+01,2022,Buildings and structures,5109978.684783452,FC
+01,2022,Plant machinery and equipment,46090875.879335366,FC
+01,2022,Transportation and miscellaneous equipment,254827.8523436,FC
+01,2022,Office furniture and equipment,584531.0102050981,FC
+01,2022,Right of use - cost,1630228.225315392,FC
+01,2022,Construction in progress,605662.90942056,FC
+01,2022,Other depreciation assets,44007.53534,FC
+01,2022,Accumulated depreciation,-37326107.34932587,FC
+01,2022,Appraisal increase of assets,0.0,FC
+01,2022,Intangible Assets - Net,5388684.429375541,FC
+01,2022,Deferred income tax,194975.4189111672,FC
+01,2022,Deferred charges & Others,686331.803900904,FC
+02,2022,Cash on hand and in banks,614893.06712428,FC
+02,2022,Accounts receivable - trade,3117176.7438573386,FC
+02,2022,Accounts receivable - trade from affiliated company,261618.32606999998,FC
+02,2022,Contract Assets,56.34863,FC
+02,2022,Current account receivable from affiliated company,0.0,FC
+02,2022,Promissory note and loans to affiliated company,0.0,FC
+02,2022,Promissory note and maketable securities,0.0,FC
+02,2022,Finished Goods,1498961.3696407042,FC
+02,2022,Works in process,472030.89819374,FC
+02,2022,Raw materials,866061.3577984001,FC
+02,2022,Spare parts,553333.63104,FC
+02,2022,"Stores, Supplies and others",277689.23608000006,FC
+02,2022,Goods in transit,302174.026478,FC
+02,2022,Assets classified as held for sale & Other Current Assets,304930.08882501494,FC
+02,2022,Investments - At Cost,415136.7897197246,FC
+02,2022,Long Term Loan to Affiliate Co.,0.0,FC
+02,2022,Land and land improvements,1295617.31856,FC
+02,2022,Buildings and structures,5107475.038916493,FC
+02,2022,Plant machinery and equipment,46085488.80452022,FC
+02,2022,Transportation and miscellaneous equipment,251686.540803,FC
+02,2022,Office furniture and equipment,583682.849258158,FC
+02,2022,Right of use - cost,1612195.5785604073,FC
+02,2022,Construction in progress,668243.315991,FC
+02,2022,Other depreciation assets,44007.53534,FC
+02,2022,Accumulated depreciation,-37429607.46542474,FC
+02,2022,Appraisal increase of assets,0.0,FC
+02,2022,Intangible Assets - Net,5246176.274328237,FC
+02,2022,Deferred income tax,191457.18146814484,FC
+02,2022,Deferred charges & Others,688369.8194655213,FC
+03,2022,Cash on hand and in banks,503046.78902340744,FC
+03,2022,Accounts receivable - trade,3220370.636919809,FC
+03,2022,Accounts receivable - trade from affiliated company,276775.81757,FC
+03,2022,Contract Assets,81.53545,FC
+03,2022,Current account receivable from affiliated company,0.0,FC
+03,2022,Promissory note and loans to affiliated company,0.0,FC
+03,2022,Promissory note and maketable securities,0.0,FC
+03,2022,Finished Goods,1567446.173211562,FC
+03,2022,Works in process,488072.6824798365,FC
+03,2022,Raw materials,942317.2088000824,FC
+03,2022,Spare parts,555913.994,FC
+03,2022,"Stores, Supplies and others",296510.15700999997,FC
+03,2022,Goods in transit,241849.634946802,FC
+03,2022,Assets classified as held for sale & Other Current Assets,345131.81551011273,FC
+03,2022,Investments - At Cost,409260.5809547494,FC
+03,2022,Long Term Loan to Affiliate Co.,0.0,FC
+03,2022,Land and land improvements,1295787.31856,FC
+03,2022,Buildings and structures,5111572.059330624,FC
+03,2022,Plant machinery and equipment,46190655.85701962,FC
+03,2022,Transportation and miscellaneous equipment,244531.542326064,FC
+03,2022,Office furniture and equipment,584549.2906579744,FC
+03,2022,Right of use - cost,1661771.6901046815,FC
+03,2022,Construction in progress,662355.7994147771,FC
+03,2022,Other depreciation assets,44846.98986,FC
+03,2022,Accumulated depreciation,-37608717.42217372,FC
+03,2022,Appraisal increase of assets,0.0,FC
+03,2022,Intangible Assets - Net,5241567.708682033,FC
+03,2022,Deferred income tax,179234.92700220822,FC
+03,2022,Deferred charges & Others,718664.4251438972,FC
+04,2022,Cash on hand and in banks,385180.720704629,FC
+04,2022,Accounts receivable - trade,3339669.18004006,FC
+04,2022,Accounts receivable - trade from affiliated company,404141.73734,FC
+04,2022,Contract Assets,105.90978999999999,FC
+04,2022,Current account receivable from affiliated company,0.0,FC
+04,2022,Promissory note and loans to affiliated company,0.0,FC
+04,2022,Promissory note and maketable securities,0.0,FC
+04,2022,Finished Goods,1384655.586133249,FC
+04,2022,Works in process,539479.9694424045,FC
+04,2022,Raw materials,1021968.2301994461,FC
+04,2022,Spare parts,550852.7733100001,FC
+04,2022,"Stores, Supplies and others",296071.32331,FC
+04,2022,Goods in transit,257847.16806181698,FC
+04,2022,Assets classified as held for sale & Other Current Assets,404604.2078114645,FC
+04,2022,Investments - At Cost,418616.93090103427,FC
+04,2022,Long Term Loan to Affiliate Co.,0.0,FC
+04,2022,Land and land improvements,1295787.31856,FC
+04,2022,Buildings and structures,5111757.284151526,FC
+04,2022,Plant machinery and equipment,46200911.87165151,FC
+04,2022,Transportation and miscellaneous equipment,245544.74442645602,FC
+04,2022,Office furniture and equipment,584896.1986110765,FC
+04,2022,Right of use - cost,1659349.4783639875,FC
+04,2022,Construction in progress,722656.5511370886,FC
+04,2022,Other depreciation assets,44846.98986,FC
+04,2022,Accumulated depreciation,-37745327.69236834,FC
+04,2022,Appraisal increase of assets,0.0,FC
+04,2022,Intangible Assets - Net,5139141.406142746,FC
+04,2022,Deferred income tax,153744.86733285862,FC
+04,2022,Deferred charges & Others,722652.1546846742,FC
+05,2022,Cash on hand and in banks,459520.1413701711,FC
+05,2022,Accounts receivable - trade,3301512.3944468237,FC
+05,2022,Accounts receivable - trade from affiliated company,525009.69191,FC
+05,2022,Contract Assets,131.09661,FC
+05,2022,Current account receivable from affiliated company,0.0,FC
+05,2022,Promissory note and loans to affiliated company,0.0,FC
+05,2022,Promissory note and maketable securities,0.0,FC
+05,2022,Finished Goods,1293115.2194650732,FC
+05,2022,Works in process,510783.6706649795,FC
+05,2022,Raw materials,1071541.228509566,FC
+05,2022,Spare parts,551153.18131,FC
+05,2022,"Stores, Supplies and others",290200.32297,FC
+05,2022,Goods in transit,279884.8704049595,FC
+05,2022,Assets classified as held for sale & Other Current Assets,397194.1035385648,FC
+05,2022,Investments - At Cost,415605.8656334511,FC
+05,2022,Long Term Loan to Affiliate Co.,0.0,FC
+05,2022,Land and land improvements,1258571.73828,FC
+05,2022,Buildings and structures,5112512.982915316,FC
+05,2022,Plant machinery and equipment,46193161.729953125,FC
+05,2022,Transportation and miscellaneous equipment,237154.01000779797,FC
+05,2022,Office furniture and equipment,583206.0347408474,FC
+05,2022,Right of use - cost,1707506.4053609269,FC
+05,2022,Construction in progress,776013.4731669755,FC
+05,2022,Other depreciation assets,44846.98986,FC
+05,2022,Accumulated depreciation,-37832590.22557153,FC
+05,2022,Appraisal increase of assets,0.0,FC
+05,2022,Intangible Assets - Net,5149735.5071569225,FC
+05,2022,Deferred income tax,123764.27110167852,FC
+05,2022,Deferred charges & Others,734904.554197072,FC
+06,2022,Cash on hand and in banks,546809.119129304,FC
+06,2022,Accounts receivable - trade,3330742.787927247,FC
+06,2022,Accounts receivable - trade from affiliated company,421954.5640135258,FC
+06,2022,Contract Assets,155.47095000000002,FC
+06,2022,Current account receivable from affiliated company,0.0,FC
+06,2022,Promissory note and loans to affiliated company,0.0,FC
+06,2022,Promissory note and maketable securities,0.0,FC
+06,2022,Finished Goods,1246945.1331279827,FC
+06,2022,Works in process,509938.83376901445,FC
+06,2022,Raw materials,1076237.248272195,FC
+06,2022,Spare parts,546203.43498,FC
+06,2022,"Stores, Supplies and others",295549.88267,FC
+06,2022,Goods in transit,231014.578057997,FC
+06,2022,Assets classified as held for sale & Other Current Assets,431920.3224972804,FC
+06,2022,Investments - At Cost,414204.5451837274,FC
+06,2022,Long Term Loan to Affiliate Co.,0.0,FC
+06,2022,Land and land improvements,1295870.31856,FC
+06,2022,Buildings and structures,5124057.875053122,FC
+06,2022,Plant machinery and equipment,46260339.19817827,FC
+06,2022,Transportation and miscellaneous equipment,241276.2713160255,FC
+06,2022,Office furniture and equipment,583993.8695876991,FC
+06,2022,Right of use - cost,1721221.9008233547,FC
+06,2022,Construction in progress,796300.2890074174,FC
+06,2022,Other depreciation assets,44846.98986,FC
+06,2022,Accumulated depreciation,-38046879.10744664,FC
+06,2022,Appraisal increase of assets,0.0,FC
+06,2022,Intangible Assets - Net,5112799.539187248,FC
+06,2022,Deferred income tax,92964.92247519757,FC
+06,2022,Deferred charges & Others,757057.2528479933,FC
+07,2022,Cash on hand and in banks,702362.1592249224,FC
+07,2022,Accounts receivable - trade,3684184.32744639,FC
+07,2022,Accounts receivable - trade from affiliated company,414381.22532453696,FC
+07,2022,Contract Assets,25.18682,FC
+07,2022,Current account receivable from affiliated company,0.0,FC
+07,2022,Promissory note and loans to affiliated company,0.0,FC
+07,2022,Promissory note and maketable securities,0.0,FC
+07,2022,Finished Goods,1183297.4458322746,FC
+07,2022,Works in process,544431.237690524,FC
+07,2022,Raw materials,1107796.1210316755,FC
+07,2022,Spare parts,545166.7986900001,FC
+07,2022,"Stores, Supplies and others",300113.60661,FC
+07,2022,Goods in transit,174534.834202312,FC
+07,2022,Assets classified as held for sale & Other Current Assets,451705.79542889475,FC
+07,2022,Investments - At Cost,420923.48185081646,FC
+07,2022,Long Term Loan to Affiliate Co.,0.0,FC
+07,2022,Land and land improvements,1295870.31856,FC
+07,2022,Buildings and structures,5142475.511531952,FC
+07,2022,Plant machinery and equipment,46330693.42215265,FC
+07,2022,Transportation and miscellaneous equipment,242849.440047386,FC
+07,2022,Office furniture and equipment,587518.3838428885,FC
+07,2022,Right of use - cost,1807683.499881078,FC
+07,2022,Construction in progress,768609.3608988635,FC
+07,2022,Other depreciation assets,44846.98986,FC
+07,2022,Accumulated depreciation,-38208684.33881711,FC
+07,2022,Appraisal increase of assets,0.0,FC
+07,2022,Intangible Assets - Net,5280637.885882659,FC
+07,2022,Deferred income tax,96617.54551159487,FC
+07,2022,Deferred charges & Others,775120.9406048966,FC
+08,2022,Cash on hand and in banks,1117794.736100266,FC
+08,2022,Accounts receivable - trade,3184178.238549348,FC
+08,2022,Accounts receivable - trade from affiliated company,374844.75224880676,FC
+08,2022,Contract Assets,41.961220000000004,FC
+08,2022,Current account receivable from affiliated company,0.0,FC
+08,2022,Promissory note and loans to affiliated company,0.0,FC
+08,2022,Promissory note and maketable securities,0.0,FC
+08,2022,Finished Goods,1312572.961356982,FC
+08,2022,Works in process,581128.774328287,FC
+08,2022,Raw materials,1096902.475864226,FC
+08,2022,Spare parts,539913.1352799999,FC
+08,2022,"Stores, Supplies and others",304736.44438,FC
+08,2022,Goods in transit,225693.428359165,FC
+08,2022,Assets classified as held for sale & Other Current Assets,469601.44738739985,FC
+08,2022,Investments - At Cost,425905.58737170446,FC
+08,2022,Long Term Loan to Affiliate Co.,0.0,FC
+08,2022,Land and land improvements,1296081.90162,FC
+08,2022,Buildings and structures,5220532.62671557,FC
+08,2022,Plant machinery and equipment,45799021.6670913,FC
+08,2022,Transportation and miscellaneous equipment,241722.45385408698,FC
+08,2022,Office furniture and equipment,580842.18873153,FC
+08,2022,Right of use - cost,1793331.033782037,FC
+08,2022,Construction in progress,301317.27995679097,FC
+08,2022,Other depreciation assets,44846.98986,FC
+08,2022,Accumulated depreciation,-37365354.21794706,FC
+08,2022,Appraisal increase of assets,0.0,FC
+08,2022,Intangible Assets - Net,5071842.839502292,FC
+08,2022,Deferred income tax,85723.1956689342,FC
+08,2022,Deferred charges & Others,795212.804804438,FC
+09,2022,Cash on hand and in banks,1282360.8870560785,FC
+09,2022,Accounts receivable - trade,3032003.390676081,FC
+09,2022,Accounts receivable - trade from affiliated company,493694.27917,FC
+09,2022,Contract Assets,58.19451,FC
+09,2022,Current account receivable from affiliated company,0.0,FC
+09,2022,Promissory note and loans to affiliated company,0.0,FC
+09,2022,Promissory note and maketable securities,0.0,FC
+09,2022,Finished Goods,1397583.89049526,FC
+09,2022,Works in process,580059.274180855,FC
+09,2022,Raw materials,1073344.3193032676,FC
+09,2022,Spare parts,549136.27557,FC
+09,2022,"Stores, Supplies and others",307810.60295,FC
+09,2022,Goods in transit,240744.804155675,FC
+09,2022,Assets classified as held for sale & Other Current Assets,512290.29888996715,FC
+09,2022,Investments - At Cost,433940.0313583975,FC
+09,2022,Long Term Loan to Affiliate Co.,0.0,FC
+09,2022,Land and land improvements,1296481.4885999998,FC
+09,2022,Buildings and structures,5226683.20969306,FC
+09,2022,Plant machinery and equipment,45802367.58788004,FC
+09,2022,Transportation and miscellaneous equipment,243195.2184000365,FC
+09,2022,Office furniture and equipment,581457.993333848,FC
+09,2022,Right of use - cost,1811335.383833229,FC
+09,2022,Construction in progress,282956.0493521,FC
+09,2022,Other depreciation assets,44846.98986,FC
+09,2022,Accumulated depreciation,-37476353.32249827,FC
+09,2022,Appraisal increase of assets,0.0,FC
+09,2022,Intangible Assets - Net,5019667.120817273,FC
+09,2022,Deferred income tax,78172.30994111842,FC
+09,2022,Deferred charges & Others,789841.08264774,FC
+10,2022,Cash on hand and in banks,1637887.8256523085,FC
+10,2022,Accounts receivable - trade,3528847.997053042,FC
+10,2022,Accounts receivable - trade from affiliated company,355363.6711814083,FC
+10,2022,Contract Assets,74.96891000000001,FC
+10,2022,Current account receivable from affiliated company,0.0,FC
+10,2022,Promissory note and loans to affiliated company,0.0,FC
+10,2022,Promissory note and maketable securities,0.0,FC
+10,2022,Finished Goods,1590152.742171846,FC
+10,2022,Works in process,511752.47135148454,FC
+10,2022,Raw materials,1045277.3244237606,FC
+10,2022,Spare parts,554205.489,FC
+10,2022,"Stores, Supplies and others",314980.27038999996,FC
+10,2022,Goods in transit,261053.9255031555,FC
+10,2022,Assets classified as held for sale & Other Current Assets,488346.62222637533,FC
+10,2022,Investments - At Cost,439347.7964037833,FC
+10,2022,Long Term Loan to Affiliate Co.,0.0,FC
+10,2022,Land and land improvements,1296736.00773,FC
+10,2022,Buildings and structures,5225237.235998121,FC
+10,2022,Plant machinery and equipment,45801510.5415417,FC
+10,2022,Transportation and miscellaneous equipment,243833.4769291295,FC
+10,2022,Office furniture and equipment,581963.0378335696,FC
+10,2022,Right of use - cost,1817374.2693053212,FC
+10,2022,Construction in progress,352537.11707234354,FC
+10,2022,Other depreciation assets,44846.98986,FC
+10,2022,Accumulated depreciation,-37631319.66758014,FC
+10,2022,Appraisal increase of assets,0.0,FC
+10,2022,Intangible Assets - Net,5209021.687132653,FC
+10,2022,Deferred income tax,79448.33905961638,FC
+10,2022,Deferred charges & Others,804579.291514807,FC
+11,2022,Cash on hand and in banks,1762585.3200380153,FC
+11,2022,Accounts receivable - trade,3627755.4507918316,FC
+11,2022,Accounts receivable - trade from affiliated company,302242.3233432924,FC
+11,2022,Contract Assets,91.20219999999999,FC
+11,2022,Current account receivable from affiliated company,0.0,FC
+11,2022,Promissory note and loans to affiliated company,0.0,FC
+11,2022,Promissory note and maketable securities,0.0,FC
+11,2022,Finished Goods,1394295.2176594397,FC
+11,2022,Works in process,475353.29102406197,FC
+11,2022,Raw materials,1036978.0327305405,FC
+11,2022,Spare parts,552751.38661,FC
+11,2022,"Stores, Supplies and others",309547.64764,FC
+11,2022,Goods in transit,280446.59232008,FC
+11,2022,Assets classified as held for sale & Other Current Assets,551370.4540230938,FC
+11,2022,Investments - At Cost,433208.9431874297,FC
+11,2022,Long Term Loan to Affiliate Co.,0.0,FC
+11,2022,Land and land improvements,1285511.08491,FC
+11,2022,Buildings and structures,5223822.950348667,FC
+11,2022,Plant machinery and equipment,45778941.868149415,FC
+11,2022,Transportation and miscellaneous equipment,242506.55761594998,FC
+11,2022,Office furniture and equipment,582076.1635986395,FC
+11,2022,Right of use - cost,1805082.5500177757,FC
+11,2022,Construction in progress,384544.641840298,FC
+11,2022,Other depreciation assets,44846.98986,FC
+11,2022,Accumulated depreciation,-37732001.10708973,FC
+11,2022,Appraisal increase of assets,0.0,FC
+11,2022,Intangible Assets - Net,5009969.893281041,FC
+11,2022,Deferred income tax,71620.11845636148,FC
+11,2022,Deferred charges & Others,799702.4243805296,FC
+12,2022,Cash on hand and in banks,1603483.7476334614,FC
+12,2022,Accounts receivable - trade,3239176.041619598,FC
+12,2022,Accounts receivable - trade from affiliated company,289620.44586000004,FC
+12,2022,Contract Assets,735.0065999999999,FC
+12,2022,Current account receivable from affiliated company,0.0,FC
+12,2022,Promissory note and loans to affiliated company,0.0,FC
+12,2022,Promissory note and maketable securities,0.0,FC
+12,2022,Finished Goods,1588403.1754528403,FC
+12,2022,Works in process,528768.4953141855,FC
+12,2022,Raw materials,1090119.398835568,FC
+12,2022,Spare parts,557833.5495600001,FC
+12,2022,"Stores, Supplies and others",319734.78939,FC
+12,2022,Goods in transit,338518.005884952,FC
+12,2022,Assets classified as held for sale & Other Current Assets,542852.632445845,FC
+12,2022,Investments - At Cost,420538.3069193723,FC
+12,2022,Long Term Loan to Affiliate Co.,0.0,FC
+12,2022,Land and land improvements,1297080.5361199998,FC
+12,2022,Buildings and structures,5231760.069533286,FC
+12,2022,Plant machinery and equipment,45822420.02109451,FC
+12,2022,Transportation and miscellaneous equipment,241339.720645119,FC
+12,2022,Office furniture and equipment,583810.2998504204,FC
+12,2022,Right of use - cost,1789609.9557044639,FC
+12,2022,Construction in progress,390946.056951819,FC
+12,2022,Other depreciation assets,44846.98986,FC
+12,2022,Accumulated depreciation,-37880958.016269624,FC
+12,2022,Appraisal increase of assets,0.0,FC
+12,2022,Intangible Assets - Net,4918795.997688774,FC
+12,2022,Deferred income tax,66403.7720810545,FC
+12,2022,Deferred charges & Others,800047.2879080981,FC

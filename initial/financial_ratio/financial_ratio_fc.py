@@ -20,15 +20,14 @@ class financial_ratio(ETL):
             lst_expexted_columns = [
                                     'bs_month', 'bs_year',
                                     'bs_account_name',
-                                    'bs_amount', 'bs_src', 'scd_active',
-                                    'scd_start', 'scd_end'
+                                    'bs_amount', 'bs_src'
                                     ] 
             
             ans_df = pd.DataFrame(columns=lst_expexted_columns) 
             df = pd.read_excel(self.file, sheet_name=self.sheet, header=None)   
             year = df.iloc[3, 2][-4:]
             bs_src = self.file.split('_')[-1].split('.')[0]  
-            self.file_name = f"BS_{bs_src}_ACT.xlsx" 
+            self.file_name = f"BS_{bs_src}_ACT.csv" 
             start_col_month = 2
      
             while True:  
@@ -53,9 +52,9 @@ class financial_ratio(ETL):
                             'bs_account_name': bs_account_name,
                             'bs_amount': bs_amount,
                             'bs_src': bs_src,
-                            'scd_active': self.scd_active,  
-                            'scd_start': year_month.strftime('%Y-%m-%d'),
-                            'scd_end': self.scd_end 
+                            # 'scd_active': self.scd_active,  
+                            # 'scd_start': year_month.strftime('%Y-%m-%d'),
+                            # 'scd_end': self.scd_end 
                             }
                     new_row = pd.DataFrame(data, index=[0])
                     ans_df = pd.concat([ans_df, new_row], ignore_index=True)
@@ -89,7 +88,7 @@ class financial_ratio(ETL):
             self.data = self.data[~(self.data['bs_account_name'].isin(bs_account_name))]
             self.data['bs_amount'] = self.data['bs_amount'].fillna(0) 
             self.data['bs_account_name'] = self.data['bs_account_name'].apply(self.format_account) 
-            self.data.to_excel(f'./output_data/bs/{self.file_name}', index=False)
+            self.data.to_csv(f'./output_data/bs/{self.file_name}', index=False)
             
 #*------------------------------------------------load data---------------------------------------------------------------------       
     def load_data(self):

@@ -56,19 +56,19 @@ if __name__ == '__main__':
     
     #*----------------------------------------- Financial_Ratio ------------------------------------------------------
     # lst_sheet = ['FC(ROIC)_FC_Business']
-    # lst_sheet = ['FC (BS Act)_FC_Business']
-    # file = './file/Financial_Ratio/8. A09_Financial Ratio_FC.xlsx'  
+    lst_sheet = ['FC (BS Act)_FC_Business']
+    file = './file/Financial_Ratio/8. A09_Financial Ratio_FC.xlsx'  
     
     # lst_sheet = ['BPC_Dec', 'BPC_Nov',
     #              'BPC_Oct', 'BPC_Sep', 'BPC_Aug',
     #              'BPC_Jul', 'BPC_Jun']
-    # lst_sheet = ['BPC_Dec']
-    # lst_sheet = ['PP(ROIC)']
+    # # lst_sheet = ['BPC_Dec']
+    # # lst_sheet = ['PP(ROIC)']
     # file = './file/Financial_Ratio/9. C09_Financial Ratio_PP.xlsx'  
     
     # lst_sheet = ['CPP(ROIC)'] 
-    lst_sheet = ['CPP (BS Act)']
-    file = './file/Financial_Ratio/10. E09_Financial Ratio_PPP.xlsx'  
+    # lst_sheet = ['CPP (BS Act)']
+    # file = './file/Financial_Ratio/10. E09_Financial Ratio_PPP.xlsx'  
     
     # lst_sheet = ['CIP(ROIC)']
     # lst_sheet = ['BPC BS V']
