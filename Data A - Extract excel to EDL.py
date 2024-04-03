@@ -35,6 +35,13 @@ volume_files = dbutils.fs.ls(VOLUME_PATH)
 
 # COMMAND ----------
 
+import glob
+
+prefix = "Data_A"
+files = [file_info for file_info in volume_files if prefix in file_info.name][0]
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC # 🎃 Extract data from the excel Sheet: A2023
 
@@ -42,9 +49,7 @@ volume_files = dbutils.fs.ls(VOLUME_PATH)
 
 #loop list store file
 try: 
-  for files in volume_files: 
-    
-      year = files.path.split('/')[-1].split('_')[2].split('.')[0][-4:]  
+      year = files.name.split('_')[2].split('.')[0][1:5]
       lst_expected_columns = ["Line_No", "Dimension", "Account", "none1", "none2", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "avg_Jan", "avg_Jan-Feb", "avg_Jan-Mar", "avg_Jan-Apr", "avg_Jan-May", "avg_Jan-Jun", "avg_Jan-Jul", "avg_Jan-Aug", "avg_Jan-Sep", "avg_Jan-Oct", "avg_Jan-Nov", "avg_Jan-Dec", "avg_Q1", "avg_Q2", "avg_Q3", "avg_Q4", "avg_H1", "avg_H2", "avg_Year"]
      
       data_types = {'Line_No':'str','Dimension':'str','Account':'str','none1':'str','none2':'str',
@@ -56,7 +61,7 @@ try:
                           'avg_Jan-Dec':'float64','avg_Q1':'float64','avg_Q2':'float64','avg_Q3':'float64','avg_Q4':'float64','avg_H1':'float64','avg_H2':'float64','avg_Year':'float64'}
     
       # Loop get all file in the folder
-      df_a = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name="A2021", header=None, dtype=data_types)
+      df_a = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name=f"A{year}", header=None, dtype=data_types)
 
       ans_df_a = pd.DataFrame()   
       dict_row = {
@@ -268,8 +273,12 @@ psdf_a.cache()
 
 # COMMAND ----------
 
+psdf_a.display()
+
+# COMMAND ----------
+
 #Create tempview for select
-psdf_a.createOrReplaceTempView("tmp_source_datae")
+psdf_a.createOrReplaceTempView("tmp_source_dataa")
 
 # COMMAND ----------
 
@@ -285,11 +294,11 @@ psdf_a.createOrReplaceTempView("tmp_source_datae")
 
 # MAGIC %sql
 # MAGIC CREATE OR REPLACE TEMPORARY VIEW 
-# MAGIC tmp_excel_cad_datae_consolidate_data_upd
+# MAGIC tmp_excel_cad_dataa_consolidate_data_upd
 # MAGIC AS
-# MAGIC SELECT * FROM tmp_source_datae A
+# MAGIC SELECT * FROM tmp_source_dataa A
 # MAGIC WHERE NOT EXISTS (
-# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data B 
+# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_consolidate_data B 
 # MAGIC     WHERE A.src_hash_key = B.src_hash_key 
 # MAGIC     AND  A.src_hash_diff = B.src_hash_diff 
 # MAGIC     AND B.scd_active = 1
@@ -298,8 +307,8 @@ psdf_a.createOrReplaceTempView("tmp_source_datae")
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data T1
-# MAGIC USING tmp_excel_cad_datae_consolidate_data_upd T2
+# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_consolidate_data T1
+# MAGIC USING tmp_excel_cad_dataa_consolidate_data_upd T2
 # MAGIC ON T1.src_hash_key = T2.src_hash_key AND T1.scd_active = 1
 # MAGIC WHEN MATCHED THEN UPDATE SET T1.scd_active = 0, T1.scd_end = CURRENT_TIMESTAMP()
 
@@ -311,9 +320,9 @@ psdf_a.createOrReplaceTempView("tmp_source_datae")
 # COMMAND ----------
 
 # MAGIC %sql  
-# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data (Line_No, Dimension, Year, Month, Amount, Account, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff)
+# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_consolidate_data (Line_No, Dimension, Year, Month, Amount, Account, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff)
 # MAGIC SELECT Line_No, Dimension, Year, Month, Amount, Account, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff
-# MAGIC FROM tmp_excel_cad_datae_consolidate_data_upd
+# MAGIC FROM tmp_excel_cad_dataa_consolidate_data_upd
 
 # COMMAND ----------
 
@@ -328,9 +337,7 @@ psdf_a.unpersist()
 
 #loop list store file
 try: 
-  for files in volume_files:   
-      year = files.path.split('/')[-1].split('_')[2].split('.')[0][-4:]  
-
+      year = files.name.split('_')[2].split('.')[0][1:5]
       lst_expected_columns = ["Line_No", "Dimension", "Items", "Unit", "none", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "avg_Jan", "avg_Jan-Feb", "avg_Jan-Mar", "avg_Jan-Apr", "avg_Jan-May", "avg_Jan-Jun", "avg_Jan-Jul", "avg_Jan-Aug", "avg_Jan-Sep", "avg_Jan-Oct", "avg_Jan-Nov", "avg_Jan-Dec", "avg_Q1", "avg_Q2", "avg_Q3", "avg_Q4", "avg_H1", "avg_H2", "avg_Year"]
       
       data_types = {'Line_No':'str','Dimension':'str','Items':'str','Unit':'str','none':'str',
@@ -343,7 +350,7 @@ try:
                     'avg_Q4':'float64','avg_H1':'float64','avg_H2':'float64','avg_Year':'float64'}
     
       # Loop get all file in the folder
-      df_cost = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name="CostA2021", header=None, dtype=data_types)
+      df_cost = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name=f"CostA{year}", header=None, dtype=data_types)
       ans_df_cost = pd.DataFrame()   
       dict_row = {
             "CIP": "806:1000",
@@ -377,9 +384,18 @@ try:
       ans_df_cost.drop(columns='none', inplace=True)
       ans_df_cost['Year'] = year
       ans_df_cost = ans_df_cost.melt(id_vars=["Line_No", "Dimension", "Items", "Unit", "Year"], var_name="Month", value_name="Amount")
+      ans_df_cost['Amount'].fillna(0, inplace=True)
    
 except Exception as e:  
       print(e)
+
+# COMMAND ----------
+
+
+# print(ans_df_cost['Unit'])
+ans_df_cost =  ans_df_cost[ans_df_cost['Line_No'] != 0]
+ans_df_cost = ans_df_cost[ans_df_cost['Unit'] != 0]
+print(ans_df_cost)
 
 # COMMAND ----------
 
@@ -422,7 +438,7 @@ psdf_cost = psdf_cost.withColumn("scd_end", to_date(concat(lit("9999"), lit("12"
 
 # COMMAND ----------
 
-psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
+psdf_cost.createOrReplaceTempView("tmp_source_dataa_cost")
 
 # COMMAND ----------
 
@@ -433,11 +449,11 @@ psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
 
 # MAGIC %sql
 # MAGIC CREATE OR REPLACE TEMPORARY VIEW 
-# MAGIC tmp_excel_cad_datae_consolidate_cost_data_upd
+# MAGIC tmp_excel_cad_dataa_consolidate_cost_data_upd
 # MAGIC AS
-# MAGIC SELECT * FROM tmp_source_datae_cost A
+# MAGIC SELECT * FROM tmp_source_dataa_cost A
 # MAGIC WHERE NOT EXISTS (
-# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_costa_consolidate_data B 
+# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data B 
 # MAGIC     WHERE A.src_hash_key = B.src_hash_key 
 # MAGIC     AND  A.src_hash_diff = B.src_hash_diff 
 # MAGIC     AND B.scd_active = 1
@@ -446,8 +462,8 @@ psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_costa_consolidate_data T1
-# MAGIC USING tmp_excel_cad_datae_consolidate_cost_data_upd T2
+# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data T1
+# MAGIC USING tmp_excel_cad_dataa_consolidate_cost_data_upd T2
 # MAGIC ON T1.src_hash_key = T2.src_hash_key AND T1.scd_active = 1
 # MAGIC WHEN MATCHED THEN UPDATE SET T1.scd_active = 0 , T1.scd_end = CURRENT_TIMESTAMP()
 
@@ -459,9 +475,16 @@ psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
 # COMMAND ----------
 
 # MAGIC %sql  
-# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_costa_consolidate_data (Line_No, Dimension, Items, Unit, Year, Month, Amount, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff)
+# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data (Line_No, Dimension, Items, Unit, Year, Month, Amount, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff)
 # MAGIC SELECT Line_No, Dimension, Items, Unit, Year, Month, Amount, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff
-# MAGIC FROM tmp_excel_cad_datae_consolidate_cost_data_upd
+# MAGIC FROM tmp_excel_cad_dataa_consolidate_cost_data_upd
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select* 
+# MAGIC from
+# MAGIC scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data
 
 # COMMAND ----------
 
@@ -471,14 +494,4 @@ psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
 # COMMAND ----------
 
 [dbutils.fs.rm(s.path) for s in src_files]
-[dbutils.fs.rm(v.path) for v in volume_files]
-
-# COMMAND ----------
-
-# %sql 
-# DELETE FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data
-
-# COMMAND ----------
-
-# %sql 
-# DELETE FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_costa_consolidate_data
+dbutils.fs.rm(files.path)
