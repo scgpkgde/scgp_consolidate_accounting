@@ -35,16 +35,19 @@ volume_files = dbutils.fs.ls(VOLUME_PATH)
 
 # COMMAND ----------
 
+prefix = "Data_E"
+files = [file_info for file_info in volume_files if prefix in file_info.name][0]
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC # 🎃 Extract data from the excel Sheet: A2023
 
 # COMMAND ----------
 
 #loop list store file
-try: 
-  for files in volume_files: 
-    
-      year = files.path.split('/')[-1].split('_')[2].split('.')[0][-4:]  
+try:  
+      year = files.name.split('_')[2].split('.')[0][1:5]
       lst_expected_columns = ["Line_No", "Dimension", "Account", "none1", "none2", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "avg_Jan", "avg_Jan-Feb", "avg_Jan-Mar", "avg_Jan-Apr", "avg_Jan-May", "avg_Jan-Jun", "avg_Jan-Jul", "avg_Jan-Aug", "avg_Jan-Sep", "avg_Jan-Oct", "avg_Jan-Nov", "avg_Jan-Dec", "avg_Q1", "avg_Q2", "avg_Q3", "avg_Q4", "avg_H1", "avg_H2", "avg_Year"]
      
       data_types = {'Line_No':'str','Dimension':'str','Account':'str','none1':'str','none2':'str',
@@ -56,7 +59,7 @@ try:
                           'avg_Jan-Dec':'float64','avg_Q1':'float64','avg_Q2':'float64','avg_Q3':'float64','avg_Q4':'float64','avg_H1':'float64','avg_H2':'float64','avg_Year':'float64'}
     
       # Loop get all file in the folder
-      df_a = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name="A2023", header=None, dtype=data_types)
+      df_a = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name=f"A{year}", header=None, dtype=data_types)
 
       ans_df_a = pd.DataFrame()   
       dict_row = {
@@ -224,7 +227,8 @@ try:
       ans_df_a = ans_df_a[ans_df_a['Account'] != 0]
       ans_df_a.drop(columns=['none1', 'none2'], inplace=True) 
       ans_df_a['Year'] = year
-      ans_df_a = ans_df_a.melt(id_vars=["Line_No", "Dimension", "Account","Year"], var_name="Month", value_name="Amount")
+      ans_df_a = ans_df_a.melt(id_vars=["Line_No", "Dimension", "Account", "Year"], var_name="Month", value_name="Amount")
+      ans_df_a['Amount'].fillna(0, inplace=True)
  
 except Exception as e:  
   print(e)
@@ -274,7 +278,7 @@ psdf_a.createOrReplaceTempView("tmp_source_datae")
 # COMMAND ----------
 
 #For Innitial
-# psdf_a.write.format("delta").mode("append").saveAsTable('scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data')
+#psdf_a.write.format("delta").mode("append").saveAsTable('scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data')
 
 # COMMAND ----------
 
@@ -327,10 +331,8 @@ psdf_a.unpersist()
 # COMMAND ----------
 
 #loop list store file
-try: 
-  for files in volume_files:   
-      year = files.path.split('/')[-1].split('_')[2].split('.')[0][-4:]  
-
+try:  
+      year = files.name.split('_')[2].split('.')[0][1:] 
       lst_expected_columns = ["Line_No", "Dimension", "Items", "Unit", "none", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "avg_Jan", "avg_Jan-Feb", "avg_Jan-Mar", "avg_Jan-Apr", "avg_Jan-May", "avg_Jan-Jun", "avg_Jan-Jul", "avg_Jan-Aug", "avg_Jan-Sep", "avg_Jan-Oct", "avg_Jan-Nov", "avg_Jan-Dec", "avg_Q1", "avg_Q2", "avg_Q3", "avg_Q4", "avg_H1", "avg_H2", "avg_Year"]
       
       data_types = {'Line_No':'str','Dimension':'str','Items':'str','Unit':'str','none':'str',
@@ -343,7 +345,7 @@ try:
                     'avg_Q4':'float64','avg_H1':'float64','avg_H2':'float64','avg_Year':'float64'}
     
       # Loop get all file in the folder
-      df_cost = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name="CostA2023", header=None, dtype=data_types)
+      df_cost = pd.read_excel(files.path.replace('dbfs:', ''), sheet_name=f"CostA{year}", header=None, dtype=data_types)
       ans_df_cost = pd.DataFrame()   
       dict_row = {
             "CIP": "806:1000",
@@ -372,14 +374,20 @@ try:
       # column_names = {i: lst_expected_columns[i] for i in range(len(lst_expected_columns))}
       column_names = {i+1: lst_expected_columns[i] for i in range(len(lst_expected_columns))}
       ans_df_cost.rename(columns=column_names, inplace=True)
-
+      
       ans_df_cost.dropna(subset=['Unit'], inplace=True) 
       ans_df_cost.drop(columns='none', inplace=True)
       ans_df_cost['Year'] = year
       ans_df_cost = ans_df_cost.melt(id_vars=["Line_No", "Dimension", "Items", "Unit", "Year"], var_name="Month", value_name="Amount")
+      ans_df_cost['Amount'].fillna(0, inplace=True)
    
 except Exception as e:  
       print(e)
+
+# COMMAND ----------
+
+ans_df_cost =  ans_df_cost[ans_df_cost['Line_No'] != 0]
+ans_df_cost = ans_df_cost[ans_df_cost['Unit'] != 0] 
 
 # COMMAND ----------
 
@@ -471,7 +479,7 @@ psdf_cost.createOrReplaceTempView("tmp_source_datae_cost")
 # COMMAND ----------
 
 [dbutils.fs.rm(s.path) for s in src_files]
-[dbutils.fs.rm(v.path) for v in volume_files]
+dbutils.fs.rm(files.path)
 
 # COMMAND ----------
 
