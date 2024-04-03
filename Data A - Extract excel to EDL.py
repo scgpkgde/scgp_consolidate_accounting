@@ -230,6 +230,7 @@ try:
       ans_df_a.drop(columns=['none1', 'none2'], inplace=True) 
       ans_df_a['Year'] = year
       ans_df_a = ans_df_a.melt(id_vars=["Line_No", "Dimension", "Account","Year"], var_name="Month", value_name="Amount")
+      ans_df_a['Amount'].fillna(0, inplace=True)
  
 except Exception as e:  
   print(e)
@@ -385,17 +386,11 @@ try:
       ans_df_cost['Year'] = year
       ans_df_cost = ans_df_cost.melt(id_vars=["Line_No", "Dimension", "Items", "Unit", "Year"], var_name="Month", value_name="Amount")
       ans_df_cost['Amount'].fillna(0, inplace=True)
+      ans_df_cost =  ans_df_cost[ans_df_cost['Line_No'] != 0]
+      ans_df_cost = ans_df_cost[ans_df_cost['Unit'] != 0]
    
 except Exception as e:  
       print(e)
-
-# COMMAND ----------
-
-
-# print(ans_df_cost['Unit'])
-ans_df_cost =  ans_df_cost[ans_df_cost['Line_No'] != 0]
-ans_df_cost = ans_df_cost[ans_df_cost['Unit'] != 0]
-print(ans_df_cost)
 
 # COMMAND ----------
 
@@ -478,13 +473,6 @@ psdf_cost.createOrReplaceTempView("tmp_source_dataa_cost")
 # MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data (Line_No, Dimension, Items, Unit, Year, Month, Amount, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff)
 # MAGIC SELECT Line_No, Dimension, Items, Unit, Year, Month, Amount, scd_active, scd_start, scd_end, src_hash_key, src_hash_diff
 # MAGIC FROM tmp_excel_cad_dataa_consolidate_cost_data_upd
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC select* 
-# MAGIC from
-# MAGIC scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_dataa_costa_consolidate_data
 
 # COMMAND ----------
 
