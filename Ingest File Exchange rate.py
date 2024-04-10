@@ -1,13 +1,8 @@
 # Databricks notebook source
-# dbutils.fs.rm('abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/20240325_18. Exchange rate 2022_send.xlsx',True)
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC #Extract data from the excel Sheet: 2022
 
 # COMMAND ----------
-
 
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
 from pyspark.sql import SparkSession
@@ -15,7 +10,14 @@ from pyspark.sql.functions import expr, col, substring , split , lit , stack ,  
 import pandas as pd
 import re
 
-excel_file_path = "abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/20240328_18. Exchange rate 2022_send.xlsx"
+SOURCE_PATH = 'abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/'
+src_files = dbutils.fs.ls(SOURCE_PATH)
+ 
+
+excel_file_path = src_files[0].path
+
+# COMMAND ----------
+
 
 df = spark.read \
     .format("com.crealytics.spark.excel") \
@@ -174,3 +176,12 @@ ins_df = transformed_df.join(result_df.select("src_hash_key"), "src_hash_key", "
 # COMMAND ----------
 
 ins_df.write.format("delta").mode("append").save("abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_STG/cad/excel_exchange_rate")
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC #Remove file in brob
+
+# COMMAND ----------
+
+[dbutils.fs.rm(s.path) for s in src_files]
