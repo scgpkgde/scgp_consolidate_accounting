@@ -274,10 +274,6 @@ psdf_a.cache()
 
 # COMMAND ----------
 
-psdf_a.display()
-
-# COMMAND ----------
-
 #Create tempview for select
 psdf_a.createOrReplaceTempView("tmp_source_dataa")
 
