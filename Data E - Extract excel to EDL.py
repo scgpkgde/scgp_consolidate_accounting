@@ -483,10 +483,7 @@ dbutils.fs.rm(files.path)
 
 # COMMAND ----------
 
-# %sql 
-# DELETE FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_consolidate_data
-
-# COMMAND ----------
-
-# %sql 
-# DELETE FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_datae_costa_consolidate_data
+# MAGIC %sql
+# MAGIC
+# MAGIC DROP TABLE tmp_excel_cad_datae_consolidate_data_upd;
+# MAGIC DROP TABLE tmp_excel_cad_datae_consolidate_cost_data_upd;

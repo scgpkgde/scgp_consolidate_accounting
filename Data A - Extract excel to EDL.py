@@ -489,3 +489,4 @@ dbutils.fs.rm(files.path)
 # MAGIC %sql
 # MAGIC
 # MAGIC DROP TABLE tmp_excel_cad_dataa_consolidate_data_upd;
+# MAGIC DROP TABLE tmp_excel_cad_dataa_consolidate_cost_data_upd;

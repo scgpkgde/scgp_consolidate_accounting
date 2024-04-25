@@ -482,3 +482,10 @@ psdf_cost.createOrReplaceTempView("tmp_source_datap_cost")
 
 [dbutils.fs.rm(s.path) for s in src_files]
 dbutils.fs.rm(files.path)
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC DROP TABLE tmp_excel_cad_datap_consolidate_data_upd;
+# MAGIC DROP TABLE tmp_excel_cad_datap_consolidate_cost_data_upd;
