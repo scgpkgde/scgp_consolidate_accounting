@@ -10,7 +10,7 @@ from pyspark.sql.functions import expr, col, substring , split , lit , stack ,  
 import pandas as pd
 import re
 
-SOURCE_PATH = 'abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/'
+SOURCE_PATH = "abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/"
 src_files = dbutils.fs.ls(SOURCE_PATH)
  
 

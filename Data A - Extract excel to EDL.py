@@ -241,6 +241,10 @@ psdf_a = spark.createDataFrame(ans_df_a)
 
 # COMMAND ----------
 
+# psdf_a.display()
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC #😉 Create hash column
 
@@ -479,3 +483,9 @@ psdf_cost.createOrReplaceTempView("tmp_source_dataa_cost")
 
 [dbutils.fs.rm(s.path) for s in src_files]
 dbutils.fs.rm(files.path)
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC
+# MAGIC DROP TABLE tmp_excel_cad_dataa_consolidate_data_upd;
