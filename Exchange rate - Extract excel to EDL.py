@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC #Extract data from the excel Sheet: 2022
+# MAGIC #Extract data from the excel Sheet: 2025
 
 # COMMAND ----------
 
@@ -9,66 +9,106 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import expr, col, substring , split , lit , stack ,  explode, col,array,monotonically_increasing_id
 import pandas as pd
 import re
+from datetime import datetime
 
 SOURCE_PATH = "abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/"
 src_files = dbutils.fs.ls(SOURCE_PATH)
- 
 
-excel_file_path = src_files[0].path
 
 # COMMAND ----------
 
+import os
 
-df = spark.read \
-    .format("com.crealytics.spark.excel") \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .option("dataAddress", f"'2022'!A3:Y15") \
-    .load(excel_file_path)
+for f in src_files:
+  adls_file_path = f.path
+  file_name = os.path.basename(f.path) 
+  volume_file_path = f"dbfs:/Volumes/scgp_edl_dev_uat/dev_scgp_edl_landing/tmp_excel_file/{file_name}"
+  dbutils.fs.cp(adls_file_path, volume_file_path)
 
-df_year = spark.read \
-    .format("com.crealytics.spark.excel") \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .option("dataAddress", f"'2022'!A1:A2") \
-    .load(excel_file_path)
-data_year = df_year.select(col("_c0").substr(-4, 4).alias("data_year")).collect()[0]["data_year"].strip()
 
-df_country = spark.read \
-    .format("com.crealytics.spark.excel") \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .option("dataAddress", f"'2022'!B2:Y15") \
-    .load(excel_file_path)
-country_column_names = [col_name for col_name in df_country.columns if not col_name.startswith('_c')]
 
+
+# COMMAND ----------
+
+import glob
+
+VOLUME_PATH = 'dbfs:/Volumes/scgp_edl_dev_uat/dev_scgp_edl_landing/tmp_excel_file/'
+volume_files = dbutils.fs.ls(VOLUME_PATH)
+current_date = datetime.now()
+formatted_date = current_date.strftime("%Y%j")
+prefix = "Exchange rate"
+_files = [file_info for file_info in volume_files if prefix in file_info.name]
+
+print(_files)
+
+# COMMAND ----------
+
+excel_file_path = _files[0].path.replace('dbfs:', '')
+print(excel_file_path)
+
+# COMMAND ----------
+
+# MAGIC %pip install xlrd
+
+# COMMAND ----------
+
+import pandas as pd
+from pyspark.sql.functions import lit
+import re
+
+# ฟังก์ชันสำหรับลบตัวเลขที่ท้ายชื่อคอลัมน์
 def remove_numbers_from_last_index(column_name):
     return re.sub(r'\d+$', '', column_name)
 
-new_column_names =  ['Month'] + [country + '_' + remove_numbers_from_last_index(name) 
-                               for country in country_column_names 
-                               for name in df.columns[1:4]]
-df_renamed = df.select([col(old).alias(new) for old, new in zip(df.columns, new_column_names)])
+# ดึงปีจากข้อมูล
+data_year = str(df_pandas_year.iloc[0, 0])[-4:].strip()
+print(data_year)
 
-def transform_dataframe(df):
-    new_df = spark.createDataFrame([], schema="Year INT, Month STRING, Currency STRING, Currency_Type STRING, Conversion_Rate DOUBLE")
-    for column_name in df.columns:
-        type_rate_split = column_name.replace('\n', '_').split('_')
-        if len(type_rate_split) >= 2:
-            type_rate = type_rate_split[1]
-            currency = column_name.split('_')[0] 
-    
-            new_df = new_df.union(df.select(
-              lit(data_year).alias("Year"),
-              expr("`{}`".format(df.columns[0])).alias("Month"), 
-              lit(currency).alias("Currency"), 
-              lit(type_rate).alias("Currency_Type"), 
-              expr("`{}`".format(column_name)).alias("Conversion_Rate")
-              ))
-    return new_df
+# อ่านข้อมูลจากไฟล์ Excel ด้วย pandas
+df_pandas_main = pd.read_excel(excel_file_path, sheet_name=data_year, skiprows=2)  # อ่านข้อมูลหลัก
+df_pandas_main = df_pandas_main.dropna()  # ลบแถวที่มีค่า null
 
-transformed_df = transform_dataframe(df_renamed)
 
+df_pandas_year = pd.read_excel(excel_file_path, sheet_name=data_year, nrows=2, usecols="A")  # อ่านปี
+df_pandas_country = pd.read_excel(excel_file_path, sheet_name=data_year, skiprows=1, nrows=1, usecols="B:Y")  # อ่านชื่อประเทศ
+
+
+
+# ดึงชื่อประเทศ
+country_column_names = [col for col in df_pandas_country.columns if not col.startswith("Unnamed")]
+print(country_column_names)
+
+df_pandas_main = df_pandas_main.rename(columns={'Unnamed: 0': 'Month'})
+df_pandas_main = df_pandas_main.loc[:, ~df_pandas_main.columns.str.startswith('Unnamed:')]
+
+# สร้างชื่อคอลัมน์ใหม่
+new_column_names = ['Month'] + [
+    f"{country}_{remove_numbers_from_last_index(col)}"
+    for country in country_column_names
+    for col in df_pandas_main.columns[1:4]  # เลือกเฉพาะคอลัมน์ที่ต้องการ
+]
+print(new_column_names)
+
+df_pandas_main.columns = new_column_names
+
+df_spark_main = spark.createDataFrame(df_pandas_main)
+# display(df_spark_main)
+
+def transform_dataframe(df, year):
+    melted_df = df.selectExpr(
+        "Month",  # เก็บคอลัมน์ Month ไว้
+        "stack({}, {}) as (Currency, Currency_Type, Conversion_Rate)".format(
+            len(df.columns) - 1,  # จำนวนคอลัมน์ที่ต้อง stack (ไม่รวม Month)
+            ", ".join([
+                f"'{col_name.split('_')[0]}', '{col_name.split('_')[1]}', `{col_name}`"
+                for col_name in df.columns[1:]  # ข้ามคอลัมน์แรก (Month)
+            ])
+        )
+    )
+    return melted_df.withColumn("Year", lit(year))
+transformed_df = transform_dataframe(df_spark_main, data_year)
+
+display(transformed_df)
 
 # COMMAND ----------
 
@@ -102,7 +142,6 @@ transformed_df = transformed_df.withColumn("src_hash_diff", sha2(
 
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, LongType, IntegerType, DecimalType, BooleanType
 
-transformed_df = transformed_df.withColumn("Year", col("Year").cast("int"))
 transformed_df = transformed_df.withColumn("Conversion_Rate", col("Conversion_Rate").cast(DecimalType(20, 4)))
 transformed_df = transformed_df.withColumn("scd_active", lit(1).cast(BooleanType()))
 transformed_df = transformed_df.withColumn("scd_start",current_timestamp())
@@ -114,19 +153,11 @@ transformed_df.cache()
 
 # COMMAND ----------
 
-transformed_df.display()
+psdf = transformed_df
 
 # COMMAND ----------
 
-# MAGIC %md
-# MAGIC #Read Data in Table
-
-# COMMAND ----------
-
-path = 'abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_STG/cad/excel_exchange_rate';
-existing_df = spark.read.format("delta").load(path)
-
- 
+psdf.display()
 
 # COMMAND ----------
 
@@ -135,30 +166,39 @@ existing_df = spark.read.format("delta").load(path)
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col
-
-transformed_df_alias = transformed_df.alias("t")
-existing_df_alias = existing_df.alias("e")
-
-joined_df = transformed_df_alias.join(existing_df_alias, "src_hash_key", "inner")\
-                                .filter((col("t.src_hash_diff") != col("e.src_hash_diff")))
-df_insert = joined_df.select("t.*")
-df_update = joined_df.select("e.*")
+psdf.createOrReplaceTempView("tmp_source_data")
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col , current_timestamp
+# MAGIC %sql
+# MAGIC CREATE OR REPLACE TEMPORARY VIEW
+# MAGIC tmp_excel
+# MAGIC AS
+# MAGIC SELECT * FROM tmp_source_data A
+# MAGIC WHERE NOT EXISTS (
+# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate  B
+# MAGIC     WHERE A.src_hash_key = B.src_hash_key
+# MAGIC     AND  A.src_hash_diff = B.src_hash_diff
+# MAGIC     AND B.scd_active = TRUE
+# MAGIC )
 
-df_update = df_update.withColumn("scd_active", lit(False))\
-                     .withColumn("scd_end", current_timestamp())
+# COMMAND ----------
 
-existing_df_filtered = existing_df_alias.join(df_update.select("src_hash_key"), "src_hash_key", "left_anti")
-final_df = existing_df_filtered.union(df_update)
-final_df = final_df.union(df_insert) 
+# MAGIC %sql
+# MAGIC select* from tmp_excel
 
+# COMMAND ----------
 
-final_df.write.format("delta").mode("overwrite").save("abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_STG/cad/excel_exchange_rate")
-
+# MAGIC %sql 
+# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate T1
+# MAGIC USING tmp_source_data T2
+# MAGIC ON T1.src_hash_key = T2.src_hash_key 
+# MAGIC AND T1.src_hash_diff != T2.src_hash_diff
+# MAGIC AND T1.scd_active = TRUE
+# MAGIC WHEN MATCHED THEN 
+# MAGIC UPDATE SET 
+# MAGIC T1.scd_active = FALSE 
+# MAGIC
 
 # COMMAND ----------
 
@@ -167,15 +207,37 @@ final_df.write.format("delta").mode("overwrite").save("abfss://scgpdldev@scgpkgd
 
 # COMMAND ----------
 
-from pyspark.sql.functions import col
-
-result_df = transformed_df.select("src_hash_key").exceptAll(existing_df.select("src_hash_key"))
-ins_df = transformed_df.join(result_df.select("src_hash_key"), "src_hash_key", "inner")
-
-
-# COMMAND ----------
-
-ins_df.write.format("delta").mode("append").save("abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_STG/cad/excel_exchange_rate")
+# MAGIC %sql
+# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate (
+# MAGIC   Year,
+# MAGIC   Month,
+# MAGIC   Currency,
+# MAGIC   Currency_Type,
+# MAGIC   Conversion_Rate,
+# MAGIC   scd_active,
+# MAGIC   scd_start,
+# MAGIC   scd_end,
+# MAGIC   src_hash_key,
+# MAGIC   src_hash_diff
+# MAGIC )
+# MAGIC SELECT
+# MAGIC   Year,
+# MAGIC   Month,
+# MAGIC   Currency,
+# MAGIC   Currency_Type,
+# MAGIC   Conversion_Rate,
+# MAGIC   scd_active,
+# MAGIC   scd_start,
+# MAGIC   scd_end,
+# MAGIC   src_hash_key,
+# MAGIC   src_hash_diff
+# MAGIC FROM tmp_excel T2
+# MAGIC WHERE NOT EXISTS
+# MAGIC (
+# MAGIC   SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate T1_sub 
+# MAGIC   WHERE T1_sub.src_hash_key = T2.src_hash_key 
+# MAGIC   AND T1_sub.scd_active = 1
+# MAGIC )
 
 # COMMAND ----------
 
@@ -185,3 +247,7 @@ ins_df.write.format("delta").mode("append").save("abfss://scgpdldev@scgpkgdldevh
 # COMMAND ----------
 
 [dbutils.fs.rm(s.path) for s in src_files]
+
+for files in _files:
+  print(files)
+  dbutils.fs.rm(files.path)
