@@ -11,7 +11,7 @@ import pandas as pd
 import re
 from datetime import datetime
 
-SOURCE_PATH = "abfss://scgpdldev@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/"
+SOURCE_PATH = "abfss://scgdectndlprd@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/"
 src_files = dbutils.fs.ls(SOURCE_PATH)
 
 
@@ -22,7 +22,7 @@ import os
 for f in src_files:
   adls_file_path = f.path
   file_name = os.path.basename(f.path) 
-  volume_file_path = f"dbfs:/Volumes/scgp_edl_dev_uat/dev_scgp_edl_landing/tmp_excel_file/{file_name}"
+  volume_file_path = f"dbfs:/Volumes/scgp_edl_prd/scgp_edl_landing/tmp_excel_file/{file_name}"
   dbutils.fs.cp(adls_file_path, volume_file_path)
 
 
@@ -32,7 +32,7 @@ for f in src_files:
 
 import glob
 
-VOLUME_PATH = 'dbfs:/Volumes/scgp_edl_dev_uat/dev_scgp_edl_landing/tmp_excel_file/'
+VOLUME_PATH = 'dbfs:/Volumes/scgp_edl_prd/scgp_edl_landing/tmp_excel_file/'
 volume_files = dbutils.fs.ls(VOLUME_PATH)
 current_date = datetime.now()
 formatted_date = current_date.strftime("%Y%m%d")
@@ -49,11 +49,6 @@ print(excel_file_path)
 # COMMAND ----------
 
 # MAGIC %pip install xlrd
-
-# COMMAND ----------
-
- 
-
 
 # COMMAND ----------
 
@@ -192,7 +187,7 @@ psdf.createOrReplaceTempView("tmp_source_data")
 # MAGIC AS
 # MAGIC SELECT * FROM tmp_source_data A
 # MAGIC WHERE NOT EXISTS (
-# MAGIC     SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate  B
+# MAGIC     SELECT 1 FROM scgp_edl_prd.scgp_edl_prd_staging.excel_cad_exchange_rate B
 # MAGIC     WHERE A.src_hash_key = B.src_hash_key
 # MAGIC     AND  A.src_hash_diff = B.src_hash_diff
 # MAGIC     AND B.scd_active = TRUE
@@ -206,7 +201,7 @@ psdf.createOrReplaceTempView("tmp_source_data")
 # COMMAND ----------
 
 # MAGIC %sql 
-# MAGIC MERGE INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate T1
+# MAGIC MERGE INTO scgp_edl_prd.scgp_edl_prd_staging.excel_cad_exchange_rate T1
 # MAGIC USING tmp_source_data T2
 # MAGIC ON T1.src_hash_key = T2.src_hash_key 
 # MAGIC AND T1.src_hash_diff != T2.src_hash_diff
@@ -224,7 +219,7 @@ psdf.createOrReplaceTempView("tmp_source_data")
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC INSERT INTO scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate (
+# MAGIC INSERT INTO scgp_edl_prd.scgp_edl_prd_staging.excel_cad_exchange_rate (
 # MAGIC   Year,
 # MAGIC   Month,
 # MAGIC   Currency,
@@ -250,7 +245,7 @@ psdf.createOrReplaceTempView("tmp_source_data")
 # MAGIC FROM tmp_excel T2
 # MAGIC WHERE NOT EXISTS
 # MAGIC (
-# MAGIC   SELECT 1 FROM scgp_edl_dev_uat.dev_scgp_edl_staging.excel_cad_exchange_rate T1_sub 
+# MAGIC   SELECT 1 FROM scgp_edl_prd.scgp_edl_prd_staging.excel_cad_exchange_rate T1_sub 
 # MAGIC   WHERE T1_sub.src_hash_key = T2.src_hash_key 
 # MAGIC   AND T1_sub.scd_active = 1
 # MAGIC )
