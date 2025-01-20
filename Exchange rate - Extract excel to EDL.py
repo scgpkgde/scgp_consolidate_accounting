@@ -60,18 +60,19 @@ import re
 def remove_numbers_from_last_index(column_name):
     return re.sub(r'\d+$', '', column_name)
 
-# ดึงปีจากข้อมูล
-data_year = str(df_pandas_year.iloc[0, 0])[-4:].strip()
-print(data_year)
+
 
 # อ่านข้อมูลจากไฟล์ Excel ด้วย pandas
-df_pandas_main = pd.read_excel(excel_file_path, sheet_name=data_year, skiprows=2)  # อ่านข้อมูลหลัก
+df_pandas_main = pd.read_excel(excel_file_path, skiprows=2)  # อ่านข้อมูลหลัก
 df_pandas_main = df_pandas_main.dropna()  # ลบแถวที่มีค่า null
 
 
-df_pandas_year = pd.read_excel(excel_file_path, sheet_name=data_year, nrows=2, usecols="A")  # อ่านปี
-df_pandas_country = pd.read_excel(excel_file_path, sheet_name=data_year, skiprows=1, nrows=1, usecols="B:Y")  # อ่านชื่อประเทศ
+df_pandas_year = pd.read_excel(excel_file_path, nrows=2, usecols="A")  # อ่านปี
+df_pandas_country = pd.read_excel(excel_file_path, skiprows=1, nrows=1, usecols="B:Y")  # อ่านชื่อประเทศ
 
+# ดึงปีจากข้อมูล
+data_year = str(df_pandas_year.iloc[0, 0])[-4:].strip()
+print(data_year)
 
 
 # ดึงชื่อประเทศ
