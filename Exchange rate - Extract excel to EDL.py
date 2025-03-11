@@ -25,9 +25,6 @@ for f in src_files:
   volume_file_path = f"dbfs:/Volumes/scgp_edl_prd/scgp_edl_landing/tmp_excel_file/{file_name}"
   dbutils.fs.cp(adls_file_path, volume_file_path)
 
-
-
-
 # COMMAND ----------
 
 import glob
@@ -52,15 +49,27 @@ print(excel_file_path)
 
 # COMMAND ----------
 
-print(_files[0].name)
+# print(_files[0].name)
   
-match = re.search(r'(\d{4})_send', _files[0].name)
-# match = re.search(r'(\d{4})\.xls', _files[0].name)
-if match:    
-  year = match.group(1) 
-  print(year)   
-else:     
-  print("Year not found.")
+# match = re.search(r'(\d{4})_send', _files[0].name)
+# # match = re.search(r'(\d{4})\.xls', _files[0].name)
+# if match:    
+#   year = match.group(1) 
+#   print(year)   
+# else:     
+#   print("Year not found.")
+
+
+import re
+
+match = re.search(r'(\d{4})_send|(\d{4})\.xls',  _files[0].name)
+
+if match:
+    year = match.group(1) if match.group(1) else match.group(2)
+    print(year)  # Output: 2024
+else:
+    print("Year not found.")
+
 
 # COMMAND ----------
 
