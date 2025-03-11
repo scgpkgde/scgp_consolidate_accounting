@@ -54,7 +54,8 @@ print(excel_file_path)
 
 print(_files[0].name)
   
-match = re.search(r'(\d{4})_send', _files[0].name)
+# match = re.search(r'(\d{4})_send', _files[0].name)
+match = re.search(r'(\d{4})_send|(\d{4})\.xls', _files[0].name)
 if match:    
   year = match.group(1) 
   print(year)   
