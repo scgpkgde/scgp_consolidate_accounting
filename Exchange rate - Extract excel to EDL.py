@@ -34,6 +34,7 @@ volume_files = dbutils.fs.ls(VOLUME_PATH)
 current_date = datetime.now()
 formatted_date = current_date.strftime("%Y%m%d")
 prefix = f"{formatted_date}_Exchange rate"
+prefix = f"Exchange rate"
 _files = [file_info for file_info in volume_files if prefix in file_info.name]
 
 print(_files)
