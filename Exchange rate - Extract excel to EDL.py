@@ -4,12 +4,17 @@
 
 # COMMAND ----------
 
+# MAGIC %pip install xlrd
+
+# COMMAND ----------
+
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import expr, col, substring , split , lit , stack ,  explode, col,array,monotonically_increasing_id
 import pandas as pd
 import re
 from datetime import datetime
+
 
 SOURCE_PATH = "abfss://scgdectndlprd@scgpkgdldevhot.dfs.core.windows.net/EDW_DATA_LANDING/scgp_fi_acct/exchange_rate/"
 src_files = dbutils.fs.ls(SOURCE_PATH)
@@ -46,7 +51,13 @@ print(excel_file_path)
 
 # COMMAND ----------
 
-# MAGIC %pip install xlrd
+ 
+# files = [
+#     file_info.path.replace('dbfs:', '') 
+#     for file_info in _files 
+ 
+# ] 
+# print(files)
 
 # COMMAND ----------
 
@@ -61,15 +72,21 @@ print(excel_file_path)
 #   print("Year not found.")
 
 
-import re
+# import re
 
-match = re.search(r'(\d{4})_send|(\d{4})\.xls',  _files[0].name)
+# match = re.search(r'(\d{4})_send|(\d{4})\.xls',  _files[1].name)
 
-if match:
-    year = match.group(1) if match.group(1) else match.group(2)
-    print(year)  # Output: 2024
-else:
-    print("Year not found.")
+# if match:
+#     year = match.group(1) if match.group(1) else match.group(2)
+#     print(year)  # Output: 2024
+# else:
+#     print("Year not found.")
+ 
+year = datetime.now().year
+# year = '2025'
+
+
+
 
 
 # COMMAND ----------
@@ -164,7 +181,7 @@ transformed_df = transformed_df.withColumn("src_hash_diff", sha2(
 
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, LongType, IntegerType, DecimalType, BooleanType
 
-transformed_df = transformed_df.withColumn("Conversion_Rate", col("Conversion_Rate").cast(DecimalType(20, 4)))
+transformed_df = transformed_df.withColumn("Conversion_Rate", col("Conversion_Rate").cast(DecimalType(30, 10)))
 transformed_df = transformed_df.withColumn("scd_active", lit(1).cast(BooleanType()))
 transformed_df = transformed_df.withColumn("scd_start",current_timestamp())
 transformed_df = transformed_df.withColumn("scd_end", to_date(concat(lit("9999"), lit("12"), lit("31")), "yyyyMMdd").cast("timestamp"))
